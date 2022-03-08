@@ -1,61 +1,34 @@
 package co.edu.unbosque.model;
 
 public class Ficha {
-	
 	private String color;
-	private int posicion;
-	private boolean acceso;
+	private int casilla;
 	
-	public Ficha() {}
-	
-	public Ficha(String col) {
-		color = col;
-		posicion = posicionInicial();
-		acceso = false;
-	}
-	
-	public int posicionInicial() {
-		switch(color) {
-			case "Amarillo":
-				return 5;
-			case "Azul":
-				return 22;
-			case "Rojo":
-				return 39;
-			case "Verde":
-				return 56;
-				default:
-					return 0;
-		}
-	}
-	
-	public String toString() {
-		return "Color: " + color + "\n" + 
-               "Posicion: " + posicion + "\n" +
-			   "Acceso: " + acceso;	
+	public Ficha(String color, int casilla) {
+		this.color = color;
+		this.casilla = casilla;
+		// Test
 	}
 
 	public String getColor() {
-		return color;
+		return this.color;
 	}
 
 	public void setColor(String color) {
 		this.color = color;
 	}
 
-	public int getPosicion() {
-		return posicion;
+	public int getCasilla() {
+		return this.casilla;
 	}
 
-	public void setPosicion(int posicion) {
-		this.posicion = posicion;
+	public void setCasilla(int casilla) {
+		this.casilla = casilla;
 	}
 
-	public boolean isAcceso() {
-		return acceso;
+	@Override
+	public String toString() {
+		return "{" + " color='" + getColor() + "'" + ", casilla='" + getCasilla() + "'" + "}";
 	}
 
-	public void setAcceso(boolean acceso) {
-		this.acceso = acceso;
-	}	
 }
